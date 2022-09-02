@@ -14,8 +14,6 @@ window.onload = function() {
                 oldHref = document.location.href;
 
 				dislikeLoader();
-				skipAd();
-				// downloadVideo();
             };
         });
     });
