@@ -1,7 +1,7 @@
 {
     "name": "Youtube Dislikes",
     "description": "This extension adds back the Youtube dislikes to its videos",
-    "version": "1",
+    "version": "1.0.0",
     "manifest_version": 3,
     "content_scripts": [
         {
