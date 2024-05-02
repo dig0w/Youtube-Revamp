@@ -42,9 +42,11 @@ observer.observe(document.body, { subtree: true, childList: true });
 async function dislikeLoader() {
 	const url = window.location.href;
 
-	if (/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/.test(url)) {
+	if (/^.*((youtu.be\/)|(watch\?))\??v?=?([^#&?]*).*/.test(url)) {
 		var videoId = url.match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/)[7];
 			if(videoId.length != 11){ videoId = false };
+
+		console.log("video")
 
 		const info = await VideoInfo(videoId);
 			if (info == undefined) { return };
@@ -54,6 +56,8 @@ async function dislikeLoader() {
 	} else if (/^.*((youtu.be\/)|(shorts\/))([^#&?]*).*/.test(url)) {
 		var videoId = url.match(/^.*((youtu.be\/)|(shorts\/))([^#&?]*).*/)[4];
 			if(videoId.length != 11){ videoId = false };
+
+		console.log("shorts")
 
 		const info = await VideoInfo(videoId);
 			if (info == undefined) { return };
