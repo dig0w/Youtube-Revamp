@@ -1,6 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+  [product-screenshot]
   <h2 align="center">Youtube Revamp</h2>
 
   <p align="center">
@@ -41,44 +42,11 @@
 
 1. Install the code
 
-2. Go to chrome://extensions/ and enable Developer mode
+2. Go to `chrome://extensions/` and enable Developer mode
 
 3. Click on Load unpacked and select the folder with the code
 
 4. Enable the extension
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-### Built With
-
-This application uses:
-
-* [![MongoDB][MongoDB.com]][MongoDB-url]
-* [![ExpressJS][ExpressJS.com]][ExpressJS-url]
-* [![React][React.js]][React-url]
-* [![NodeJS][NodeJS.org]][NodeJS-url]
-* [![Socket][Socket.io]][Socket-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Edit profile
-- [ ] Edit cats
-- [ ] Edit messages
-    - [ ] Forward
-    - [ ] Reply
-    - [ ] React
-
-See the [open issues](https://github.com/dig0w/chat-app/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -107,7 +75,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 [@dig0w0224](https://twitter.com/dig0w0224) - dig0w.yt@gmail.com
 
-Project Link: [https://github.com/dig0w/chat-app](https://github.com/dig0w/chat-app)
+Project Link: [https://github.com/dig0w/Youtube-Revamp](https://github.com/dig0w/Youtube-Revamp)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,14 +95,4 @@ Project Link: [https://github.com/dig0w/chat-app](https://github.com/dig0w/chat-
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
-[MongoDB.com]: https://img.shields.io/badge/MongoDB-20232A?style=for-the-badge&logo=mongodb&logoColor=00FE69
-[MongoDB-url]: https://www.mongodb.com/
-[ExpressJS.com]: https://img.shields.io/badge/Express-20232A?style=for-the-badge&logo=express&logoColor=259DFF
-[ExpressJS-url]: https://expressjs.com/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[NodeJS.org]: https://img.shields.io/badge/NodeJS-20232A?style=for-the-badge&logo=nodedotjs&logoColor=5FA04E
-[NodeJS-url]: https://nodejs.org/
-[Socket.io]: https://img.shields.io/badge/Socket-20232A?style=for-the-badge&logo=socketdotio&logoColor=FEFEFE
-[Socket-url]: https://socket.io/
+[product-screenshot]: icons/logo_128x.png
