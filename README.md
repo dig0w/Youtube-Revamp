@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <img src=[product-screenshot]>
+  <img src=icons/logo_128x.png>
   <h2 align="center">Youtube Revamp</h2>
 
   <p align="center">
