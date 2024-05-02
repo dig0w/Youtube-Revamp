@@ -17,7 +17,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -38,45 +37,15 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-### Prerequisites
-
-To install the server packages:
-* npm
-  ```sh
-  cd server
-  npm install
-  ```
-
-
-To install the client packages:
-* npm
-  ```sh
-  cd client
-  npm install
-  ```
-
 ### Installation
 
-1. Create a .env file inside server folder
+1. Install the code
 
-2. Create MongoDB Cluster
+2. Go to chrome://extensions/ and enable Developer mode
 
-3. Inside .env file
-  ```env
-  DB_USER = MongoDB Username
-  DB_PASS = MongoDB Password
-  ```
+3. Click on Load unpacked and select the folder with the code
 
-4. For the sign in verification you need an email and an application key
-  ```env
-  EMAil = Email
-  PASS = Email Application Key
-  ```
-
-5. Get a free Token Key at [https://jwt.io](https://jwt.io)
-  ```env
-  JWT_SECRET = Token Key
-  ```
+4. Enable the extension
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
