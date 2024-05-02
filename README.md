@@ -5,7 +5,7 @@
   <h2 align="center">Youtube Revamp</h2>
 
   <p align="center">
-    This extension adds back dislikes to the videos, removes Shorts tab and download videos for Google Chrome
+    This extension for Google Chrome adds back dislikes to the videos, removes Shorts tab and download videos from Youtube
   </p>
 </div>
 
