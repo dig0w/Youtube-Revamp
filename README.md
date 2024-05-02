@@ -33,7 +33,7 @@
 
 ### Installation
 
-1. Install the code
+1. Download the code
 
 2. Go to `chrome://extensions/` and enable Developer mode
 
