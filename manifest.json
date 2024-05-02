@@ -1,6 +1,6 @@
 {
     "name": "Youtube Revamp",
-    "description": "This extension adds back the Youtube dislikes to its videos",
+    "description": "This extension adds back the Youtube dislikes to its videos, removes Shorts tab",
     "version": "1.0.0",
     "manifest_version": 3,
     "content_scripts": [
