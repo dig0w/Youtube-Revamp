@@ -140,6 +140,8 @@ function removeShorts() {
 
 	if (shortsBtn && shortsBtn.children[0] && shortsBtn.children[0].children[0] && shortsBtn.children[0].children[0].children[2] && shortsBtn.children[0].children[0].children[2].innerHTML == "Shorts") {
 		shortsBtn.remove();
+	} else if (shortsBtn && shortsBtn.children[0] && shortsBtn.children[0].children[0] && shortsBtn.children[0].children[0].children[2] && shortsBtn.children[0].children[0].children[2].children[0] && shortsBtn.children[0].children[0].children[2].children[0].innerHTML == "Shorts") {
+		shortsBtn.remove();
 	};
 
 	if (miniShortsBtn && miniShortsBtn.children[0] && miniShortsBtn.children[0].children[1] && miniShortsBtn.children[0].children[1].innerHTML == "Shorts") {
