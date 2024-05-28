@@ -26,12 +26,12 @@ window.onclick = () => {
 };
 // Observe Updates
 const observer = new MutationObserver((mutationsList, observer) => {
-	if (/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/.test(window.location.href)) {
-		for(const mutation of mutationsList) {
-			if (mutation.type === "childList") {
-				if (mutation.removedNodes.length) {
-					dislikeLoader();
-				};
+	for(const mutation of mutationsList) {
+		if (mutation.type === "childList") {
+			if (mutation.removedNodes.length > 0) {
+				dislikeLoader();
+			} else if (mutation.addedNodes.length > 0) {
+				removeShorts();
 			};
 		};
 	};
@@ -146,6 +146,13 @@ function removeShorts() {
 
 	if (miniShortsBtn && miniShortsBtn.children[0] && miniShortsBtn.children[0].children[1] && miniShortsBtn.children[0].children[1].innerHTML == "Shorts") {
 		miniShortsBtn.remove();
+	};
+
+	const shortsFeed = document.querySelectorAll("div#content.style-scope.ytd-rich-section-renderer");
+	if (shortsFeed) {
+		for (let i = 0; i < shortsFeed.length; i++) {
+			shortsFeed[i].remove();
+		};
 	};
 };
 
