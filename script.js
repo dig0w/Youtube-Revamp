@@ -154,6 +154,12 @@ function removeShorts() {
 			shortsFeed[i].remove();
 		};
 	};
+	const shortsSearch = document.querySelectorAll("ytd-reel-shelf-renderer.style-scope.ytd-item-section-renderer");
+	if (shortsSearch) {
+		for (let i = 0; i < shortsSearch.length; i++) {
+			shortsSearch[i].remove();
+		};
+	};
 };
 
 // Download Videos
