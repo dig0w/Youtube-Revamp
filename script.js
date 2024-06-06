@@ -197,7 +197,7 @@ function downloadBtn() {
 function removeBanners() {
 	const banners = document.querySelectorAll("div#masthead-ad.style-scope.ytd-rich-grid-renderer");
 	if (banners) {
-		for (let i = 0; i < shortsFeed.length; i++) {
+		for (let i = 0; i < banners.length; i++) {
 			banners[i].remove();
 		};
 	};
