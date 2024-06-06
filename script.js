@@ -1,8 +1,9 @@
 // OnLoad
 var oldHref = document.location.href;
 window.onload = () => {
-	removeShorts();
 	dislikeLoader();
+	removeShorts();
+	removeBanners();
 
     const observer = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
@@ -12,6 +13,7 @@ window.onload = () => {
 				setTimeout(() => {
 					dislikeLoader();
 					removeShorts();
+					removeBanners();
 				}, 1000);
             };
         });
@@ -23,6 +25,7 @@ window.onload = () => {
 window.onclick = () => {
 	dislikeLoader();
 	removeShorts();
+	removeBanners();
 };
 // Observe Updates
 const observer = new MutationObserver((mutationsList, observer) => {
@@ -32,6 +35,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
 				dislikeLoader();
 			} else if (mutation.addedNodes.length > 0) {
 				removeShorts();
+				removeBanners();
 			};
 		};
 	};
@@ -43,7 +47,7 @@ async function dislikeLoader() {
 	const url = window.location.href;
 
 	if (/^.*((youtu.be\/)|(watch\?))\??v?=?([^#&?]*).*/.test(url)) {
-		var videoId = url.match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/)[7];
+		let videoId = url.match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/)[7];
 			if(videoId.length != 11){ videoId = false };
 
 		const info = await VideoInfo(videoId);
@@ -52,8 +56,9 @@ async function dislikeLoader() {
 		upateDislikes(info.dislikes, 0, url);
 		removeShorts();
 		downloadBtn();
+		removeBanners();
 	} else if (/^.*((youtu.be\/)|(shorts\/))([^#&?]*).*/.test(url)) {
-		var videoId = url.match(/^.*((youtu.be\/)|(shorts\/))([^#&?]*).*/)[4];
+		let videoId = url.match(/^.*((youtu.be\/)|(shorts\/))([^#&?]*).*/)[4];
 			if(videoId.length != 11){ videoId = false };
 
 		const info = await VideoInfo(videoId);
@@ -63,6 +68,7 @@ async function dislikeLoader() {
 
 		upateDislikes(info.dislikes, 1, url);
 		removeShorts();
+		removeBanners();
 	};
 };
 
@@ -84,7 +90,7 @@ async function upateDislikes(dislikesInfo, idx, url) {
 					if (dislikes == undefined) return;
 
 				if (!dislikeBtn.children[2]) {
-					var dislikeTxt = document.createElement("div");
+					const dislikeTxt = document.createElement("div");
 					dislikeTxt.classList.add("yt-spec-button-shape-next__button-text-content");
 					dislikeTxt.innerHTML = dislikes;
 
@@ -99,11 +105,11 @@ async function upateDislikes(dislikesInfo, idx, url) {
 			} else if (idx == 1) {
 				const dislikeBtns = document.querySelectorAll("ytd-toggle-button-renderer#dislike-button.style-scope.ytd-like-button-renderer");
 			
-				for (var i = 0; i < dislikeBtns.length; i++) {
+				for (let i = 0; i < dislikeBtns.length; i++) {
 					if (dislikeBtns[i].children[0] && dislikeBtns[i].children[0].children[0] && dislikeBtns[i].children[0].children[0].children[1] && dislikeBtns[i].children[0].children[0].children[1].children[0]) {
 						if (dislikeBtns[i].children[0].children[0].children[0].getAttribute("aria-pressed") == "true") { dislikesInfo = dislikesInfo + 1 };
 
-						var dislikes = await formatDislikes(dislikesInfo);
+						let dislikes = await formatDislikes(dislikesInfo);
 							if (dislikes == 0) { dislikes = "Dislike" };
 
 						dislikeBtns[i].children[0].children[0].children[1].children[0].innerHTML = dislikes;
@@ -117,7 +123,7 @@ async function upateDislikes(dislikesInfo, idx, url) {
 };
 
 function formatDislikes(dislikesCount) {
-	var num = 0;
+	let num = 0;
 
 	if (dislikesCount >= 1000000000) {
 		num = dislikesCount/1000000000;
@@ -135,8 +141,8 @@ function formatDislikes(dislikesCount) {
 
 // Remove Shorts
 function removeShorts() {
-	var shortsBtn = document.querySelectorAll("ytd-guide-entry-renderer.style-scope.ytd-guide-section-renderer")[1];
-	var miniShortsBtn = document.querySelectorAll("ytd-mini-guide-entry-renderer.style-scope.ytd-mini-guide-renderer")[1];
+	const shortsBtn = document.querySelectorAll("ytd-guide-entry-renderer.style-scope.ytd-guide-section-renderer")[1];
+	const miniShortsBtn = document.querySelectorAll("ytd-mini-guide-entry-renderer.style-scope.ytd-mini-guide-renderer")[1];
 
 	if (shortsBtn && shortsBtn.children[0] && shortsBtn.children[0].children[0] && shortsBtn.children[0].children[0].children[2] && shortsBtn.children[0].children[0].children[2].innerHTML == "Shorts") {
 		shortsBtn.remove();
@@ -154,6 +160,7 @@ function removeShorts() {
 			shortsFeed[i].remove();
 		};
 	};
+
 	const shortsSearch = document.querySelectorAll("ytd-reel-shelf-renderer.style-scope.ytd-item-section-renderer");
 	if (shortsSearch) {
 		for (let i = 0; i < shortsSearch.length; i++) {
@@ -164,7 +171,7 @@ function removeShorts() {
 
 // Download Videos
 function downloadBtn() {
-	var redirect = window.location.href.split(".");
+	let redirect = window.location.href.split(".");
 	redirect[1] = "ssyoutube";
 
 	const btns = document.querySelectorAll("button.yt-spec-button-shape-next.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading");
@@ -173,7 +180,7 @@ function downloadBtn() {
 		if (btns[i].getAttribute("aria-label") == "Download") {
 
 			btns[i].onclick = () => {
-				window.open(redirect.join("."), '_blank').focus();
+				window.open(redirect.join("."), "_blank").focus();
 			};
 		};
 	};
@@ -181,7 +188,17 @@ function downloadBtn() {
 	const btnMenu = document.querySelector("ytd-menu-service-item-download-renderer.style-scope.ytd-menu-popup-renderer.iron-selected");
 		if (btnMenu) {
 			btnMenu.onclick = () => {
-				window.open(redirect.join("."), '_blank').focus();
+				window.open(redirect.join("."), "_blank").focus();
 			};
 		};
+};
+
+// Remove Banners
+function removeBanners() {
+	const banners = document.querySelectorAll("div#masthead-ad.style-scope.ytd-rich-grid-renderer");
+	if (banners) {
+		for (let i = 0; i < shortsFeed.length; i++) {
+			banners[i].remove();
+		};
+	};
 };
