@@ -66,7 +66,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-[@dig0w0224](https://twitter.com/dig0w0224) - dig0w.yt@gmail.com
+[@dig0w0224](https://twitter.com/dig0w0224) - dig0w.work@gmail.com
 
 Project Link: [https://github.com/dig0w/Youtube-Revamp](https://github.com/dig0w/Youtube-Revamp)
 
