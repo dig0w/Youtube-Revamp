@@ -62,6 +62,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
-Project Link: [https://github.com/dig0w/Youtube-Revamp](https://github.com/dig0w/Youtube-Revamp)
-
-<p align="right">(<a href="#Youtube-Revamp">back to top</a>)</p>
+**🔗 Project Link:** [github.com/dig0w/Youtube-Revamp](https://github.com/dig0w/Youtube-Revamp)
